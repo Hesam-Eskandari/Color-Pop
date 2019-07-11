@@ -3,7 +3,7 @@
 #https://github.com/Hesam-Eskandari
 #https://www.facebook.com/EskandariHesam
 #keyboard keys: 1,2,3,4,5,6,7,8,9 for size of the pen or eraser and 'r' as reverse mode for the eraser
-#go to line 90 to change the photo's name to load (default name is 'photo.jpg')
+#go to line 88 to change the photo's name to load (default name is 'photo.jpg')
 
 from cv2 import EVENT_LBUTTONUP, imshow, imread, waitKey, destroyAllWindows, COLOR_BGR2GRAY
 from cv2 import cvtColor, namedWindow, setMouseCallback, COLOR_GRAY2BGR, COLOR_BGR2HSV
@@ -63,9 +63,7 @@ def color(ground,gr_pop,x_c,y_c,original,reverse):
                                         break
                                     else:
                                         tail(gr_hsv,item[0],item[1],a,i+1)
-
-
-                                
+                                        
         click(0,0,0,0,0)
         return coords
     if not reverse:
@@ -135,20 +133,3 @@ for row in original:
     else:
         color_pop_final[row[0]:row[1],row[2]:row[3],:]=gray[row[0]:row[1],row[2]:row[3],:]
 imwrite('color_pop.jpg',color_pop_final)
-
-
-# In[31]:
-
-
-x = np.array([[1,2]])
-x = np.append(x,[[2,3]],axis=0)
-x = np.append(x,[[2,4]],axis=0)
-print(x)
-sum(np.isin(x,[1,2]),0)
-
-
-# In[34]:
-
-
-
-
